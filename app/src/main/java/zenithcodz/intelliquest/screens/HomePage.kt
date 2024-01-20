@@ -22,6 +22,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -54,6 +56,7 @@ fun HomeScreen() {
         CourseListClass(
             tagLine = "learn more",
             subject = "Maths",
+            icon = R.drawable.mathsicon
         ),
         CourseListClass(
             tagLine = "learn more",
@@ -137,11 +140,32 @@ fun HomeScreen() {
         Text(
             text = "Your Progress on quiz",
             fontWeight = FontWeight.ExtraBold,
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            color = Color.Black
         )
-        Row {
-
-        }
+        Spacer(modifier = Modifier.height(14.dp))
+        LinearProgressIndicator(
+            progress = 0.7f,
+            color = Color.Black,
+            trackColor = Color.LightGray,
+            modifier = Modifier
+                .height(16.dp)
+                .fillMaxWidth()
+                .clip(CircleShape),
+            strokeCap = StrokeCap.Round
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "You finished ___ quizzes out of ___",
+            color = Color.Black
+        )
+        Spacer(modifier = Modifier.height(14.dp))
+        Text(
+            text = "Quizzes Available",
+            fontWeight = FontWeight.ExtraBold,
+            fontSize = 20.sp,
+            color = Color.Black
+        )
     }
 }
 
@@ -174,13 +198,7 @@ fun CourseListCarouselLayout(carousel: CourseListClass) {
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold
         )
-        Spacer(modifier = Modifier.height(3.dp))
-        Text(
-            text = carousel.tagLine,
-            color = Color.White,
-            fontSize = 14.sp
-        )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(16.dp))
         Box(
             modifier = Modifier
                 .size(width = 120.dp, height = 40.dp)
