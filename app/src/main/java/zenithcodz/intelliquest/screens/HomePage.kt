@@ -49,6 +49,7 @@ fun HomeScreen() {
         CourseListClass(
             tagLine = "learn more",
             subject = "Chemistry",
+            icon = R.drawable.chemistryicon
         ),
         CourseListClass(
             tagLine = "learn more",
