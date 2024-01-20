@@ -132,6 +132,15 @@ fun HomeScreen() {
         ) { page ->
             CourseListCarouselLayout(courseList[page])
         }
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            text = "Your Progress on quiz",
+            fontWeight = FontWeight.ExtraBold,
+            fontSize = 20.sp
+        )
+        Row {
+
+        }
     }
 }
 
