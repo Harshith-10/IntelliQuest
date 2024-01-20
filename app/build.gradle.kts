@@ -54,6 +54,10 @@ dependencies {
     implementation("io.coil-kt:coil:2.5.0")
     implementation("io.coil-kt:coil-gif:2.5.0")
 
+    implementation ("androidx.compose.ui:ui:1.5.4")
+    implementation ("androidx.compose.material:material:1.5.4")
+    implementation ("androidx.navigation:navigation-compose:2.7.6")
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
