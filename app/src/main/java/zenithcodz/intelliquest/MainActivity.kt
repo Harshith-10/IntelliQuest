@@ -1,6 +1,7 @@
 package zenithcodz.intelliquest
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -100,21 +101,14 @@ class MainActivity : ComponentActivity() {
                 HorizontalPager(
                     state = pagerState,
                     modifier = Modifier
-                        .weight(1f)
                         .fillMaxWidth()
+                        .weight(1f)
                 ) {
                     Box(modifier = Modifier.fillMaxSize()) {
                         when (screens[it]) {
                             Screen.Home -> HomeScreen()
-                            //Screen.Courses -> CoursesScreen()
-                            //Screen.Profile -> ProfileScreen()
-                            else -> Text(
-                                text = screens[it].title,
-                                fontSize = 24.sp,
-                                fontFamily = Inter,
-                                color = Color.White,
-                                modifier = Modifier.align(Alignment.Center)
-                            )
+                            Screen.Courses -> CoursesScreen()
+                            Screen.Profile -> ProfileScreen()
                         }
                     }
                 }
@@ -124,21 +118,14 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun HomeScreen() {
-        val hour = LocalDateTime.now().hour
-        val greeting = when {
-            hour < 12 -> "Good Morning!"
-            hour < 17 -> "Good Afternoon!"
-            else -> "Good Evening!"
-        }
-
+    private fun ProfileScreen() {
         Column(modifier = Modifier
             .fillMaxSize()
             .padding(8.dp, 0.dp)) {
 
             Row {
                 Text(
-                    text = greeting,
+                    text = "Profile",
                     fontSize = 28.sp,
                     color = Color.White,
                     fontFamily = Inter,
@@ -164,7 +151,6 @@ class MainActivity : ComponentActivity() {
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
                     .clip(RoundedCornerShape(16.dp))
             ) {
                 item {
@@ -200,6 +186,151 @@ class MainActivity : ComponentActivity() {
                                 )
                                 Text(
                                     text = "Pro ✨",
+                                    fontSize = 14.sp,
+                                    color = Color.White.copy(alpha = 0.7f),
+                                    fontFamily = Inter,
+                                    maxLines = 4,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Composable
+    private fun CoursesScreen() {
+        Column(modifier = Modifier
+            .fillMaxSize()
+            .padding(8.dp, 0.dp)) {
+
+            Row {
+                Text(
+                    text = "Courses",
+                    fontSize = 28.sp,
+                    color = Color.White,
+                    fontFamily = Inter,
+                    modifier = Modifier
+                        .padding(
+                            start = 16.dp,
+                            top = 16.dp
+                        )
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.books_sticker),
+                    contentDescription = null,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .padding(
+                            start = 16.dp,
+                            top = 16.dp
+                        )
+                        .size(42.dp)
+                )
+            }
+
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(16.dp))
+            ) {
+                items(courses.size) { index ->
+                    val course = courses[index]
+                    CourseItem(course = course)
+                }
+            }
+        }
+    }
+
+    @Composable
+    private fun HomeScreen() {
+        val hour = LocalDateTime.now().hour
+        val greeting = when {
+            hour < 12 -> "Good Morning!"
+            hour < 17 -> "Good Afternoon!"
+            else -> "Good Evening!"
+        }
+        val sticker = when {
+            hour < 12 -> R.drawable.morning_sticker
+            hour < 17 -> R.drawable.afternoon_sticker
+            else -> R.drawable.evening_sticker
+        }
+
+        Column(modifier = Modifier
+            .fillMaxSize()
+            .padding(8.dp, 0.dp)) {
+
+            Row {
+                Text(
+                    text = greeting,
+                    fontSize = 28.sp,
+                    color = Color.White,
+                    fontFamily = Inter,
+                    modifier = Modifier
+                        .padding(
+                            start = 16.dp,
+                            top = 16.dp
+                        )
+                )
+                Image(
+                    painter = painterResource(id = sticker),
+                    contentDescription = null,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .padding(
+                            start = 16.dp,
+                            top = 16.dp
+                        )
+                        .size(42.dp)
+                )
+            }
+
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(16.dp))
+            ) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp, 8.dp)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(Color.Black.copy(alpha = 0.7f))
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(8.dp, 8.dp)
+                                .clickable {
+                                    startActivity(
+                                        Intent(
+                                            Intent.ACTION_VIEW,
+                                            Uri.parse("https://mediafiles.botpress.cloud/76e23bf4-b2f7-41e5-b4ed-37f44d60a74d/webchat/bot.html")
+                                        )
+                                    )
+                                },
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.icon_ai),
+                                contentDescription = null,
+                                contentScale = ContentScale.Fit,
+                                modifier = Modifier
+                                    .padding(end = 16.dp)
+                                    .size(64.dp)
+                            )
+                            Column {
+                                Text(
+                                    text = "Chat with AI",
+                                    fontSize = 20.sp,
+                                    color = Color.White,
+                                    fontFamily = Inter
+                                )
+                                Text(
+                                    text = "Click here to talk to our AI and get answers to your questions",
                                     fontSize = 14.sp,
                                     color = Color.White.copy(alpha = 0.7f),
                                     fontFamily = Inter,
@@ -283,7 +414,7 @@ class MainActivity : ComponentActivity() {
             modifier = Modifier
                 .padding(horizontal = 16.dp)
                 .fillMaxWidth()
-                .height(6.dp)
+                .height(60.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .background(Color.Black.copy(alpha = 0.7f))
                 .then(modifier),
