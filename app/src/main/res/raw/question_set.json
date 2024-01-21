@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "question": "What is an algorithm, and why is it important in programming?",
+    "options": [
+      "A type of bug in the code.",
+      "A step-by-step procedure for solving a problem.",
+      "A programming language.",
+      "A hardware component."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 2,
+    "question": "Define a variable in a programming language and provide an example.",
+    "options": [
+      "A constant value.",
+      "A placeholder for data.",
+      "A programming error.",
+      "A function call."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 3,
+    "question": "Explain the difference between a stack and a queue.",
+    "options": [
+      "Both follow LIFO principle.",
+      "Both follow FIFO principle.",
+      "Stack follows LIFO, and queue follows FIFO.",
+      "Stack follows FIFO, and queue follows LIFO."
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 4,
+    "question": "Implement a bubble sort algorithm on the following array: [5, 2, 8, 1, 3].",
+    "options": [
+      "[2, 1, 3, 5, 8]",
+      "[8, 5, 3, 2, 1]",
+      "[1, 2, 3, 5, 8]",
+      "[5, 2, 8, 1, 3]"
+    ],
+    "answer": "1"
+  },
+  {
+    "id": 5,
+    "question": "What is encapsulation, and how does it contribute to object-oriented programming?",
+    "options": [
+      "Encapsulation is a type of loop.",
+      "Encapsulation is bundling data and methods, promoting data hiding.",
+      "Encapsulation is a type of inheritance.",
+      "Encapsulation is a form of code duplication."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 6,
+    "question": "Give an example of inheritance in a programming context.",
+    "options": [
+      "class Dog extends Animal",
+      "class Animal inherits Dog",
+      "class Dog includes Animal",
+      "class Animal includes Dog"
+    ],
+    "answer": "1"
+  },
+  {
+    "id": 7,
+    "question": "Describe the role of HTML, CSS, and JavaScript in web development.",
+    "options": [
+      "HTML structures content, CSS provides interactivity, JavaScript styles it.",
+      "HTML structures content, CSS styles it, JavaScript adds interactivity.",
+      "HTML provides interactivity, CSS structures content, JavaScript styles it.",
+      "HTML, CSS, and JavaScript are interchangeable."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 8,
+    "question": "How does a web framework like Django or Flask simplify web development?",
+    "options": [
+      "By complicating the development process.",
+      "By providing pre-built structures and tools.",
+      "By eliminating the need for HTML.",
+      "By limiting customization options."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 9,
+    "question": "Explain the purpose of a primary key in a database table.",
+    "options": [
+      "It stores primary data.",
+      "It uniquely identifies each record in a table.",
+      "It is an optional field in a table.",
+      "It is used for storing passwords."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 10,
+    "question": "Write a basic SQL query to retrieve data from a table named 'students.'",
+    "options": [
+      "SELECT * FROM students;",
+      "GET * FROM students;",
+      "RETRIEVE * FROM students;",
+      "SHOW students;"
+    ],
+    "answer": "1"
+  },
+  {
+    "id": 11,
+    "question": "What is Git, and how does it facilitate version control in collaborative coding?",
+    "options": [
+      "A programming language.",
+      "A database management system.",
+      "A distributed version control system.",
+      "A cloud storage service."
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 12,
+    "question": "Describe the difference between 'git pull' and 'git push' commands.",
+    "options": [
+      "Both upload changes to the remote repository.",
+      "'git pull' fetches changes, 'git push' uploads local changes.",
+      "'git push' fetches changes, 'git pull' uploads local changes.",
+      "Both download changes from the remote repository."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 13,
+    "question": "Why is it important to incorporate real-world projects in a programming curriculum?",
+    "options": [
+      "To increase academic workload.",
+      "To make students tired.",
+      "To provide practical experience and bridge theory with application.",
+      "To confuse students."
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 14,
+    "question": "Provide an example of a project that addresses a local industry need in India.",
+    "options": [
+      "Designing a game.",
+      "Creating a chat application.",
+      "Designing a digital solution for efficient supply chain management in the agriculture sector.",
+      "Developing a weather app."
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 15,
+    "question": "How can effective communication skills benefit a programmer in a team setting?",
+    "options": [
+      "By causing confusion.",
+      "By promoting teamwork and efficient problem-solving.",
+      "By reducing collaboration.",
+      "By discouraging discussion."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 16,
+    "question": "Explain the importance of professionalism in coding practices.",
+    "options": [
+      "It increases the number of bugs in the code.",
+      "It ensures code readability and adherence to standards.",
+      "It encourages code duplication.",
+      "It hinders collaboration."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 17,
+    "question": "Name a recent technology trend in the field of computer programming.",
+    "options": [
+      "Typewriters.",
+      "Artificial Intelligence (AI) and Machine Learning (ML).",
+      "Abacuses.",
+      "Morse code."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 18,
+    "question": "How does artificial intelligence impact various industries?",
+    "options": [
+      "By slowing down processes.",
+      "By automating tasks, enhancing efficiency, and enabling data-driven decision-making.",
+      "By increasing manual labor.",
+      "By causing chaos."
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 19,
+    "question": "Write a Python function to find the factorial of a given number.",
+    "options": [
+      "def factorial(n): return n * factorial(n-1)",
+      "def factorial(n): return n + factorial(n-1)",
+      "def factorial(n): return 1 if n <= 1 else n * factorial(n-1)",
+      "def factorial(n): return 1 if n <= 1 else n + factorial(n-1)"
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 20,
+    "question": "Implement a linked list in Python.",
+    "options": [
+      "class Node: def __init__(self, data): self.data = data self.next = None",
+      "class Element: def __init__(self, data): self.data = data self.next = None",
+      "class ListItem: def __init__(self, data): self.data = data self.next = None",
+      "class DataNode: def __init__(self, data): self.data = data self.next = None"
+    ],
+    "answer": "1"
+  }
+]
