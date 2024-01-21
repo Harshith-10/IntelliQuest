@@ -53,7 +53,7 @@ fun quizzez() {
     ) {
         Row (
             modifier = Modifier
-                .background(Color.Blue)
+                .background(Color.Transparent)
                 .padding(15.dp)
                 .fillMaxWidth()
 
@@ -62,7 +62,7 @@ fun quizzez() {
         }
         Row (
             modifier = Modifier
-                .background(Color.Magenta)
+                .background(Color.Transparent)
                 .padding(10.dp)
                 .fillMaxWidth()
 
@@ -73,22 +73,17 @@ fun quizzez() {
                     .width(118.dp)
                     .height(54.dp)
                     .weight(2F)
-
             ){
                 Text(text = "Quiz",
                     fontSize =30.sp )
-
             }
             Row (
                 modifier = Modifier
                     .background(Color.White)
             ){
                 Text(text = "10/20")
-
             }
         }
-
-
             Box(
                 modifier = Modifier
                     .padding(horizontal = 50.dp, vertical = 40.dp)
@@ -142,9 +137,6 @@ fun quizzez() {
 
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
         ) {}
-
-
-
             Box(modifier = Modifier
                 .size(width = 756.dp, height = 500.dp)
                 .background(
@@ -182,7 +174,7 @@ fun quizzez() {
                             .clickable {}
                     ){
                         Icon(painterResource(id =R.drawable.doublejeopardy_modified ),
-                            contentDescription = "Players can get 1.5x the score for 20 seconds when they play at a faster speed ")
+                            contentDescription = "Players get double the score if they choose the correct answer but lose it all if they choose the wrong answer")
                     }
                     Spacer(modifier = Modifier.width(20.dp))
                     FloatingActionButton(onClick = { /*TODO*/ },
@@ -193,7 +185,7 @@ fun quizzez() {
                             .clickable {}
                     ){
                         Icon(painterResource(id =R.drawable.fifty_fiftypowerupmodified ),
-                            contentDescription = "Players can get 1.5x the score for 20 seconds when they play at a faster speed ")
+                            contentDescription = "Eliminates half of the incorrect answer options ")
                     }
 
                 }
